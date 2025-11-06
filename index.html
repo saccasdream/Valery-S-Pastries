@@ -1,12 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Valery’s Pastries – Blouberg Cakes & Treats</title>
+  <meta name="description"
+    content="Valery’s Pastries - Homemade cakes, cookies and treats serving Bochum, Senwabarwana and Blouberg." />
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    :root {
+      --pink: #e32f80;
+      --aqua: #24b3c0;
+    }
+
     .rainbow span:nth-child(1) {
       color: #24b3c0;
     }
@@ -26,132 +34,424 @@
     .rainbow span:nth-child(5) {
       color: #e32f80;
     }
+
+    .rainbow span:nth-child(6) {
+      color: #24b3c0;
+    }
+
+    .rainbow span:nth-child(7) {
+      color: #ff7f32;
+    }
+
+    .rainbow span:nth-child(8) {
+      color: #00a651;
+    }
+
+
+    .brand-grad {
+      background: linear-gradient(90deg, var(--pink), var(--aqua));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    .btn-primary {
+      background: var(--pink);
+      color: white
+    }
+
+    .btn-accent {
+      background: var(--aqua);
+      color: white
+    }
+
+    /* simple card shadow */
+    .card {
+      box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+      border-radius: 12px
+    }
   </style>
 </head>
 
-<body class="bg-white text-gray-800 font-sans">
-  <header class="text-center py-6 border-b border-gray-200">
-    <h1 class="text-4xl font-bold">
-      <span class="text-[#e32f80]">Valery’s</span>
-      <span class="rainbow">
-        <span>P</span><span>a</span><span>s</span><span>t</span><span>r</span><span>i</span><span>e</span><span>s</span>
-      </span>
-    </h1>
-    <p class="text-[#24b3c0] text-lg">Blouberg Cakes & Treats</p>
+<body class="bg-white text-gray-800 leading-relaxed">
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-[var(--pink)] flex items-center justify-center text-white font-bold">VP
+        </div>
+        <div>
+          <div class="text- lg font-semibold">
+            <span class="text-[#e32f80]">Valery’s</span> <span class="rainbow">
+              <span>P</span><span>a</span><span>s</span><span>t</span><span>r</span><span>i</span><span>e</span><span>s</span>
+            </span>
+          </div>
+          <div class="text-xs text-[#e32f80]">Blouberg Cakes & Treats— Homemade. Heartfelt. Delicious.</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-4 items-center">
+        <a href="#cakes" class="text-sm hover:text-[var(--pink)]">Cakes</a>
+        <a href="#treats" class="text-sm hover:text-[var(--pink)]">Treats</a>
+        <a href="#gallery" class="text-sm hover:text-[var(--pink)]">Gallery</a>
+        <a href="#reviews" class="text-sm hover:text-[var(--pink)]">Reviews</a>
+        <a href="#order" class="text-sm hover:text-[var(--pink)]">Order</a>
+        <a href="#about" class="text-sm hover:text-[var(--pink)]">About</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/27738157091" target="_blank" rel="noopener"
+          class="btn-primary px-4 py-2 rounded-md text-sm whitespace-nowrap">Order on WhatsApp</a>
+      </div>
+    </div>
   </header>
 
-  <section class="text-center py-10 px-4">
-    <h2 class="text-3xl font-semibold mb-4">LOOKING FOR A CUSTOM CAKE?</h2>
-    <p class="max-w-2xl mx-auto mb-6">Look no further! We can make your sweet dreams come to life. Whether you are
-      celebrating a birthday, anniversary, graduation, baby shower or any other special event, big or small, we’ll give
-      it the importance it deserves. Fill out our online form and get in touch — we can’t wait to hear all about your
-      special occasion.</p>
-    <a href="https://wa.me/27738157091" class="bg-[#24b3c0] text-white px-6 py-3 rounded-lg font-semibold">Chat on
-      WhatsApp</a>
+  <!-- HERO -->
+  <section id="home" class="container mx-auto px-4 py-16 grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">LOOKING FOR A CUSTOM CAKE?</h1>
+      <p class="mt-4 text-lg">Look no further! We can make your sweet dreams come to life. Whether you are celebrating a
+        birthday, anniversary, graduation, baby shower or any other special event — big or small — we will give it the
+        importance it deserves.</p>
+      <p class="mt-3 text-sm text-gray-600 italic">Fill out our online form and get in touch — re ka go thusa! (we’ll
+        help you.)</p>
+
+      <div class="mt-6 flex gap-3">
+        <a href="#order" class="btn-accent px-4 py-3 rounded-md font-semibold">Get a Quote</a>
+        <a href="https://wa.me/27738157091" target="_blank" rel="noopener"
+          class="btn-primary px-4 py-3 rounded-md font-semibold">Chat on WhatsApp</a>
+      </div>
+
+      <ul class="mt-8 grid grid-cols-2 gap-2 text-sm text-gray-700">
+        <li>✅ Freshly baked to order</li>
+        <li>✅ Kids' themed cakes (Bluey, Cocomelon, etc.)</li>
+        <li>✅ Cookies, muffins & cupcakes available</li>
+        <li>✅ Serving Bochum, Senwabarwana & Blouberg</li>
+      </ul>
+    </div>
+    <div class="flex items-center justify-center">
+      <img src="images/cake-3.jpg" alt="cakes" class="rounded-2xl w-full max-w-md shadow-lg" />
+    </div>
   </section>
 
-  <section class="bg-pink-50 py-10 px-4">
-    <h3 class="text-2xl font-semibold text-center mb-4">Ordering Information</h3>
-    <p class="max-w-3xl mx-auto text-center mb-6">We require a <strong>48-hour lead time</strong> for all orders. Orders
-      needed in less than 48 hours will incur a <strong>R150 rush fee</strong>. A <strong>40% deposit</strong> is
-      required to confirm your booking, with the balance due on collection or delivery.</p>
-  </section>
+  <!-- CAKES SECTION -->
+  <section id="cakes" class="py-12 border-t">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-[#e32f80]">Cakes</h2>
+      <p class="mt-2 text-gray-600">Choose a size first, then select a flavour and optional theme. Prices shown as
+        <strong>R___</strong> are placeholders and will be finalized when you place your order.
+      </p>
 
-  <section id="order" class="py-10 px-4">
-    <h3 class="text-2xl font-semibold text-center mb-6">Place Your Order</h3>
-    <form id="orderForm" class="max-w-lg mx-auto space-y-4 bg-white p-6 shadow rounded-lg">
-      <div>
-        <label class="block font-semibold">Full Name</label>
-        <input type="text" id="name" class="border border-gray-300 w-full p-2 rounded" required />
-      </div>
-      <div>
-        <label class="block font-semibold">Phone Number</label>
-        <input type="text" id="phone" class="border border-gray-300 w-full p-2 rounded" required />
-      </div>
-      <div>
-        <label class="block font-semibold">Cake Size</label>
-        <select id="size" class="border border-gray-300 w-full p-2 rounded" required>
-          <option value="">Select size</option>
-          <option value="Fun-size Mini">Fun-size Mini (10cm) – R___</option>
-          <option value="Small">Small (15cm) – R___</option>
-          <option value="Medium">Medium (20cm) – R___</option>
-          <option value="Large">Large (25cm) – R___</option>
-          <option value="Extra-Large">Extra-Large (30cm+) – R___</option>
-        </select>
-      </div>
-      <div>
-        <label class="block font-semibold">Flavor</label>
-        <select id="flavor" class="border border-gray-300 w-full p-2 rounded" required>
-          <option value="">Select flavor</option>
-          <option>Vanilla</option>
-          <option>Chocolate</option>
-          <option>Red Velvet</option>
-          <option>Lemon</option>
-          <option>Strawberry</option>
-          <option>Carrot</option>
-          <option>Marble</option>
-        </select>
-      </div>
-      <div>
-        <label class="block font-semibold">Delivery Option</label>
-        <div class="flex gap-4">
-          <label><input type="radio" name="deliveryOption" value="delivery" /> Delivery (extra cost)</label>
-          <label><input type="radio" name="deliveryOption" value="collection" /> Collection</label>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="card p-6">
+          <h3 class="font-semibold text-lg">Fun-size Mini <span class="text-sm text-gray-500">(10cm) — Serves 2–4</span>
+          </h3>
+          <p class="mt-2 text-sm text-gray-600">Small and sweet — perfect as a gift. Starting price:
+            <strong>R___</strong>
+          </p>
+          <div class="mt-3 flex gap-2">
+            <button class="px-3 py-2 rounded-md border text-sm" onclick="startOrder('Fun-size Mini (10cm)')">Order this
+              size</button>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="font-semibold text-lg">Small <span class="text-sm text-gray-500">(15cm) — Serves 6–8</span></h3>
+          <p class="mt-2 text-sm text-gray-600">Popular for family gatherings. Starting price: <strong>R___</strong></p>
+          <div class="mt-3 flex gap-2">
+            <button class="px-3 py-2 rounded-md border text-sm" onclick="startOrder('Small (15cm)')">Order this
+              size</button>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="font-semibold text-lg">Medium <span class="text-sm text-gray-500">(20cm) — Serves 10–12</span></h3>
+          <p class="mt-2 text-sm text-gray-600">Most popular choice. Starting price: <strong>R___</strong></p>
+          <div class="mt-3 flex gap-2">
+            <button class="px-3 py-2 rounded-md border text-sm" onclick="startOrder('Medium (20cm)')">Order this
+              size</button>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="font-semibold text-lg">Large & Extra Large <span class="text-sm text-gray-500">(25–30cm+) — Serves
+              15+</span></h3>
+          <p class="mt-2 text-sm text-gray-600">For big parties. Starting price: <strong>R___</strong></p>
+          <div class="mt-3 flex gap-2">
+            <button class="px-3 py-2 rounded-md border text-sm" onclick="startOrder('Large (25cm+)')">Order this
+              size</button>
+          </div>
         </div>
       </div>
-      <div id="deliveryDetails" class="hidden">
-        <label class="block font-semibold">Delivery Address</label>
-        <textarea id="address" class="border border-gray-300 w-full p-2 rounded"></textarea>
+
+      <!-- Flavours -->
+      <div class="mt-8">
+        <h4 class="font-semibold">Our Flavours</h4>
+        <p class="text-sm text-gray-600 mt-2">Choose any flavour after selecting a size.</p>
+        <div class="mt-3 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+          <span class="px-3 py-2 border rounded bg-yellow-100">Vanilla</span>
+          <span class="px-3 py-2 border rounded bg-[#411900] text-white">Chocolate</span>
+          <span class="px-3 py-2 border rounded bg-[#9c0000]">Red Velvet</span>
+          <span class="px-3 py-2 border rounded bg-[#fff48b]">Lemon</span>
+          <span class="px-3 py-2 border rounded bg-[#FB2943]">Strawberry</span>
+          <span class="px-3 py-2 border rounded bg-[#ea7515]">Carrot</span>
+          <span class="px-3 py-2 border rounded">Marble</span>
+          <span class="px-3 py-2 border rounded">Custom (tell us)</span>
+        </div>
+
+        <p class="mt-4 text-sm text-gray-600"><strong>Themes (kids):</strong> Bluey, Cocomelon, Barbie, Sonic — R___
+          extra (depends on detail).</p>
       </div>
-      <div id="collectionDetails" class="hidden bg-pink-50 p-3 rounded">
-        <p><strong>Collection Address:</strong> Stand 181 Glenfirnes Village / Mokwena Maswikeng, Bochum 0790</p>
-        <p class="text-pink-700">Come collect your cake and enjoy a cup of tea with a muffin 🍰☕</p>
-      </div>
-      <div>
-        <button type="button" onclick="calculateTotal()" class="bg-[#24b3c0] text-white px-4 py-2 rounded">Get
-          Total</button>
-      </div>
-      <div id="totalDisplay" class="text-center text-lg font-semibold text-[#e32f80]"></div>
-      <div id="quoteMessage" class="text-center text-gray-700"></div>
-    </form>
+    </div>
   </section>
 
-  <footer class="bg-gray-100 text-center py-6 mt-10">
-    <p>Serving Bochum / Senwabarwana / Blouberg</p>
-    <p class="text-sm text-gray-600">Website by Saccasdream Innovations – Build. Solve. Grow.</p>
+  <!-- TREATS -->
+  <section id="treats" class="py-12 border-t border-[#e32f80] bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-[#ff7f32]">Treats</h2>
+      <p class=" mt-2 text-gray-600">Cookies, muffins and cupcakes baked fresh. Prices shown as placeholders.</p>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="card p-4">
+          <img src="images/cookies.jpeg" alt="cookies" class="rounded-md w-full h-40 object-cover" />
+          <h4 class="mt-3 font-semibold">Cookies</h4>
+          <p class="text-sm text-gray-600">R___ per pack</p>
+        </div>
+        <div class="card p-4">
+          <img src="images/muffins.jpeg" alt="muffins" class="rounded-md w-full h-40 object-cover" />
+          <h4 class="mt-3 font-semibold">Muffins</h4>
+          <p class="text-sm text-gray-600">R___ per dozen</p>
+        </div>
+        <div class="card p-4">
+          <img src="images/cup-cakes.jpeg" alt="cupcakes" class="rounded-md w-full h-40 object-cover" />
+          <h4 class="mt-3 font-semibold">Cupcakes</h4>
+          <p class="text-sm text-gray-600">R___ per dozen</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-12 border-t border-[#ff7f32]">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-[#00a651]">Gallery</h2>
+      <p class="mt-2 text-gray-600">Photos of cakes we've made — real work from our home kitchen.</p>
+
+      <div class="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="images/cake-1.jpg" alt="cake1" class="rounded-md w-full h-80 object-cover" />
+        <img src="images/cake-2.jpg" alt="cake2" class="rounded-md w-full h-80 object-cover" />
+        <img src="images/cake-3.jpg" alt="cake3" class="rounded-md w-full h-80 object-cover" />
+        <img src="images/cake-4.jpg" alt="cake4" class="rounded-md w-full h-80 object-cover" />
+        <img src="images/cake-5.jpg" alt="cake5" class="rounded-md w-full h-80 object-cover" />
+        <img src="images/cake-6.jpg" alt="cake6" class="rounded-md w-full h-80 object-cover" />
+        <img src="images/cake-7.jpg" alt="cake7" class="rounded-md w-full h-80 object-cover" />
+        <img src="images/cake-8.jpg" alt="cake8" class="rounded-md w-full h-80 object-cover" />
+        <img src="images/cake-9.jpg" alt="cake9" class="rounded-md w-full h-80 object-cover" />
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="py-12 border-t bg-gray-50 border-[#00a651]">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-[#e32f80]">Reviews</h2>
+      <p class="mt-2 text-gray-600">What our customers say</p>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-4">
+        <div class="card p-4">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gray-200"></div>
+            <div>
+              <div class="font-semibold">Thandi — Bochum</div>
+              <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p class="mt-3 text-sm text-gray-700">"Delicious and beautiful! Valery made my daughter's party so special."
+          </p>
+        </div>
+
+        <div class="card p-4">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gray-200"></div>
+            <div>
+              <div class="font-semibold">Lebohang — Senwabarwana</div>
+              <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p class="mt-3 text-sm text-gray-700">"Great service, arrived on time and tasted amazing. Highly recommend!"
+          </p>
+        </div>
+
+        <div class="card p-4">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gray-200"></div>
+            <div>
+              <div class="font-semibold">Maria — Blouberg</div>
+              <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p class="mt-3 text-sm text-gray-700">"Beautiful design and perfect flavour. Will order again."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER -->
+  <section id="order" class="py-12 border-t">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl font-bold">Order</h2>
+      <p class="mt-2 text-gray-600">Fill the quick order form below — we will confirm availability and final price. A
+        <strong>40% deposit</strong> is required to secure an order. (Deposit policy: orders without deposit are not
+        confirmed.)
+      </p>
+
+      <form id="orderForm" class="mt-6 grid grid-cols-1 gap-4">
+        <div>
+          <label class="text-sm font-medium">Full name</label>
+          <input type="text" id="name" required class="w-full mt-1 p-3 border rounded" placeholder="Your full name" />
+        </div>
+        <div>
+          <label class="text-sm font-medium">Phone number</label>
+          <input type="tel" id="phone" required class="w-full mt-1 p-3 border rounded" placeholder="e.g. 073 815 7091"
+            value="0738157091" />
+        </div>
+        <div>
+          <label class="text-sm font-medium">Event type</label>
+          <select id="event" class="w-full mt-1 p-3 border rounded">
+            <option>Birthday</option>
+            <option>Anniversary</option>
+            <option>Graduation</option>
+            <option>Baby Shower</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm font-medium">Cake size</label>
+          <select id="size" class="w-full mt-1 p-3 border rounded">
+            <option>Fun-size Mini (10cm)</option>
+            <option>Small (15cm)</option>
+            <option>Medium (20cm)</option>
+            <option>Large (25cm)</option>
+            <option>Extra-Large (30cm+)</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm font-medium">Flavour</label>
+          <select id="flavour" class="w-full mt-1 p-3 border rounded">
+            <option>Vanilla</option>
+            <option>Chocolate</option>
+            <option>Red Velvet</option>
+            <option>Lemon</option>
+            <option>Strawberry</option>
+            <option>Carrot</option>
+            <option>Marble</option>
+            <option>Custom</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm font-medium">Theme / Design notes (optional)</label>
+          <input id="notes" class="w-full mt-1 p-3 border rounded"
+            placeholder="E.g. Cocomelon theme, pastel colors, message on cake" />
+        </div>
+        <div>
+          <label class="text-sm font-medium">Pickup / Delivery date</label>
+          <input type="date" id="date" class="w-full mt-1 p-3 border rounded" />
+        </div>
+
+        <div class="flex gap-3 mt-3">
+          <button type="button" onclick="submitOrder('whatsapp')"
+            class="btn-primary px-4 py-3 rounded-md font-semibold">Send via WhatsApp</button>
+          <button type="button" onclick="submitOrder('email')" class="px-4 py-3 rounded-md border">Send via
+            Email</button>
+        </div>
+
+        <p class="text-xs text-gray-500 mt-2">Note: A 40% deposit secures your booking. Re a leboga ka go rapela (thank
+          you for supporting our small home bakery).</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-12 border-t bg-gray-50">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl font-bold text-[#e32f80]">About Valery</h2>
+      <div class="mt-4 flex gap-6 items-center">
+        <img src="images/548829304_4074233882831587_8150573279381413795_n.jpg""
+          alt=" Valery" class="w-28 h-28 rounded-full object-cover" />
+        <div>
+          <p class="text-gray-700">Hi, I’m <strong>Gomolemo (Valery)</strong>. I bake with love from my home kitchen in
+            Mokwena Maswikeng, a small village outside Bochum near Kroemhoek. I started <span
+              class="text-[#e32f80]">Valery’s</span> <span class="rainbow">
+              <span>P</span><span>a</span><span>s</span><span>t</span><span>r</span><span>i</span><span>e</span><span>s</span>
+              to bring joy
+              to local celebrations — from simple cookies to full
+              custom cakes. Every order is made fresh to your request.</p>
+          <p class="mt-2 text-sm text-gray-600">Serving Bochum (Senwabarwana) and nearby villages. For special requests,
+            le ka kgokagana le rena ka WhatsApp — (we'll make it happen).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer class="py-8 border-t bg-white">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-start justify-between gap-6">
+      <div>
+        <div class="text-lg font-semibold"><span class="text-[#e32f80]">Valery’s</span> <span class="rainbow">
+            <span>P</span><span>a</span><span>s</span><span>t</span><span>r</span><span>i</span><span>e</span><span>s</span>
+        </div>
+        <div class="text-sm text-[#e32f80]">Blouberg Cakes & Treats — Homemade. Heartfelt. Delicious.
+        </div>
+        <div class="mt-3 text-sm">WhatsApp: <a href="https://wa.me/27738157091" class="text-[var(--pink)]">073 815
+            7091</a></div>
+        <div class="text-sm">Email: <a href="mailto:valeryspastries@gmail.com"
+            class="text-[var(--aqua)]">valeryspastries@gmail.com</a></div>
+      </div>
+
+      <div>
+        <div class="text-sm text-gray-600">Serving Bochum / Senwabarwana / Blouberg</div>
+        <div class="mt-4 text-xs text-gray-500">Website by Saccasdream Innovations – Build. Solve. Grow.</div>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    const prices = {
-      'Fun-size Mini': 150,
-      'Small': 250,
-      'Medium': 350,
-      'Large': 450,
-      'Extra-Large': 600
-    };
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/27738157091" target="_blank" rel="noopener"
+    class="fixed bottom-6 right-6 rounded-full p-3 shadow-lg" style="background:var(--aqua)">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+      stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+        d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.97-4.03 9-9 9a8.96 8.96 0 01-4.5-1.18L3 21l1.18-4.5A8.96 8.96 0 013 12c0-4.97 4.03-9 9-9s9 4.03 9 9z" />
+    </svg>
+  </a>
 
-    function calculateTotal() {
-      const size = document.getElementById('size').value;
-      const deliveryOption = document.querySelector('input[name="deliveryOption"]:checked');
-      if (!size) {
-        alert('Please select a cake size.');
-        return;
-      }
-      let total = prices[size] || 0;
-      if (deliveryOption && deliveryOption.value === 'delivery') {
-        total += 50; // delivery cost placeholder
-      }
-      document.getElementById('totalDisplay').innerText = `Estimated Total: R${total} (excluding delivery)`;
-      document.getElementById('quoteMessage').innerText = `You will receive your quote shortly with a reference to use for payment. Ke a leboga!`;
+  <script>
+    function startOrder(size) {
+      document.getElementById('size').value = size;
+      document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
     }
 
-    const radios = document.querySelectorAll('input[name="deliveryOption"]');
-    radios.forEach(radio => {
-      radio.addEventListener('change', () => {
-        document.getElementById('deliveryDetails').classList.toggle('hidden', radio.value !== 'delivery');
-        document.getElementById('collectionDetails').classList.toggle('hidden', radio.value !== 'collection');
-      });
-    });
+    function submitOrder(method) {
+      const name = encodeURIComponent(document.getElementById('name').value || '');
+      const phone = encodeURIComponent(document.getElementById('phone').value || '');
+      const eventType = encodeURIComponent(document.getElementById('event').value || '');
+      const size = encodeURIComponent(document.getElementById('size').value || '');
+      const flavour = encodeURIComponent(document.getElementById('flavour').value || '');
+      const notes = encodeURIComponent(document.getElementById('notes').value || '');
+      const date = encodeURIComponent(document.getElementById('date').value || '');
+
+      const message = `Hello Valery! I would like to place an order:%0AName: ${name}%0APhone: ${phone}%0AEvent: ${eventType}%0ACake size: ${size}%0AFlavour: ${flavour}%0ADesign notes: ${notes}%0APickup/Delivery date: ${date}%0A(Please confirm final price and deposit)`;
+
+      if (method === 'whatsapp') {
+        // open whatsapp with prefilled message
+        const wa = `https://wa.me/27738157091?text=${message}`;
+        window.open(wa, '_blank');
+      } else {
+        // open email client
+        const subject = encodeURIComponent('Cake order enquiry from website');
+        const body = decodeURIComponent(message).replace(/%0A/g, '\n');
+        window.location.href = `mailto:valeryspastries@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
+      }
+    }
   </script>
 </body>
 
